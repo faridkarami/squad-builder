@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #3949AB;
+    --color-secondary: #C2185B;
+
+    --color-btn: #455A64;
+
+    --color-light: #FFFFFF;
+    --color-dark: #222222;
+    --color-red: #f71228;
+    --dimen-radius: 3px;
+    --shadow: rgba(0, 0, 0, 0.3) 0 0 10px 0;
+}
+
+body {
+    background-image: url("./image/bg-body.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.search-found {
+    background-image: linear-gradient(45deg, #388E3C, #00796B);
+}
+
+.search-notfound {
+    background-image: linear-gradient(45deg, #D81B60, #d32f2f);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 50%;
+    padding: 20px;
+}
+
+@media (max-width: 1000px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.form {
+    background-color: var(--color-light);
+    border-radius: var(--dimen-radius);
+    box-shadow: var(--shadow);
+    padding: 10px;
+    text-align: left;
+}
+
+.form .field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form .field .label {
+    display: block;
+    color: var(--color-dark);
+    width: 100px;
+}
+
+.form .field .input {
+    display: block;
+    width: calc(100% - 100px);
+    padding: 10px;
+    border-radius: var(--dimen-radius);
+    box-shadow: var(--shadow);
+    border: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button {
+    position: relative;
+    border: var(--color-btn) 2px solid;
+    cursor: pointer;
+    padding: 5px 30px;
+    border-radius: var(--dimen-radius);
+    font-size: 16px;
+    background-color: var(--color-light);
+    color: var(--color-btn);
+    width: 150px;
+}
+
+.button:hover {
+    background-color: var(--color-btn);
+    color: var(--color-light);
+}
+
+.button .shortcut {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    font-size: 10px;
+    color: var(--color-btn);
+}
+
+/* ------------------------------------------------------------------------- */
+/* -------------------------------- display -------------------------------- */
+/* ------------------------------------------------------------------------- */
+.display-list {
+    padding: 15px;
+    border-radius: var(--dimen-radius);
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 18px;
+    box-shadow: var(--shadow);
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.display-list .item {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    margin: 3px;
+    transition: 0.3s;
+    color: var(--color-light);
+    background-image: url('./image/tshirt.svg');
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    padding: 5px;
+    background-origin: content-box;
+    border: 5px solid var(--color-light);
+    box-shadow: var(--shadow), #000 0 0 50px 0 inset;
+}
+
+.display-list .item:before {
+    content: '';
+    background-color: var(--color-light);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 1;
+    transition: 0.3s;
+    opacity: 0;
+    border: 5px solid var(--color-light);
+}
+
+.display-list .item:hover:before {
+    animation: anim-item-before 3s infinite alternate;
+}
+
+@keyframes anim-item-before {
+    to {
+        transform: scale(0.5);
+        /*opacity: 0;*/
+    }
+}
+
+.display-list .item .item-name {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 30px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.display-list .item .item-number {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+.display-list .item.active {
+    outline: 3px dashed #888888;
+    border-color: var(--color-dark);
+}
+
+.display-list .item:hover {
+    border-radius: 100px;
+}
+
+.display-list .item:hover:before {
+    border-radius: 100px;
+    opacity: 1;
+}
+/* ------------------------------------------------------------------------- */
+/* -------------------------------- display -------------------------------- */
+/* ------------------------------------------------------------------------- */

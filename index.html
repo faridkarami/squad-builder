@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Squad Builder</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/memory.js"></script>
+    <script src="assets/js/script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="form">
+          <fieldset>
+            <legend>Personal Info</legend>
+            <div class="field">
+              <label class="label" for="firstName">First Name: </label>
+              <input class="input" id="firstName" />
+            </div>
+            <div class="field">
+              <label class="label" for="lastName">Last Name: </label>
+              <input class="input" id="lastName" />
+            </div>
+            <div class="field">
+              <label class="label" for="number">Number: </label>
+              <input class="input" id="number" maxlength="2" />
+            </div>
+          </fieldset>
+          <hr />
+          <div class="controls">
+            <button class="button" id="addButton">
+              Add <span class="shortcut">enter</span>
+            </button>
+            <button class="button" id="searchButton">
+              Search <span class="shortcut">ctrl + r</span>
+            </button>
+            <button class="button" id="sortButton">
+              Sort <span class="shortcut">ctrl + q</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="display-list" id="displayList"></div>
+      </div>
+    </div>
+  </body>
+</html>
